@@ -2,10 +2,10 @@ const Producto = require("../models/Producto");
 
 exports.crearProducto = async (req, res)=>{
     try{
-
         let producto;
         producto = new Producto(req.body);
         await producto.save();
+        res.send(producto);
         console.log('Producto guardado');
 
     } catch(error){
